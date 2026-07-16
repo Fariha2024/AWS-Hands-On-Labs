@@ -2,6 +2,17 @@
 ## AWS Hands-On Labs
 
 
+## 📂 Featured Labs Overview
+
+### 🖥️ Lab 1: Rapid Application Deployment with AWS Lightsail
+
+A hands-on implementation of Platform-as-a-Service (PaaS) utilizing AWS Lightsail to deploy a secure, cost-effective WordPress website.
+* **Key Steps:** * Blueprint selection (Linux/Bitnami WordPress) and SSH key pair management.
+  * AWS CloudShell integration for default credentials retrieval.
+  * Public DNS mapping and administrative portal verification.
+
+
+
 🔹 ![alt text](<aws class 41 lab/lightsail-lab/lightsail.step0.png>)
 
 
@@ -133,7 +144,14 @@ seen yes -------> Hello world!
 
 -----------x-----------
 
-
+### 🛡️ Lab 2: Secure Web Infrastructure (VPC + ALB + EC2 + WAF)
+A production-grade, multi-tier web application architecture featuring high-availability routing and centralized security controls.
+* **VPC Networking:** Provisioned a custom VPC (`10.0.0.0/16`) spanning multiple Availability Zones with custom subnets, an Internet Gateway (IGW), and routing tables (`custom-RT`).
+* **Compute & Web Server:** Deployed a Windows EC2 instance hosting an IIS (Internet Information Services) web server with custom web assets.
+* **Load Balancing:** Configured an Application Load Balancer (ALB) and Target Groups with robust health check policies.
+* **AWS WAF Integration:** Implemented an AWS Web Application Firewall (WAF) to filter incoming traffic. 
+  * Configured **IP Sets** to block malicious IP ranges using `/32` subnet masks.
+  * Created a **Web ACL (Protection Pack)** using custom rules to return `403 Forbidden` errors for blocked clients while keeping traffic open for legitimate users.
 
 
 
@@ -196,6 +214,44 @@ seen yes -------> Hello world!
 
 
 
+
+
+
+## 📐 Architecture Topology
+
+Below is the conceptual flow of the AWS WAF and Application Load Balancer setup:
+
+
+[ Incoming Requests ]
+│
+▼
+┌─────────┐
+│ AWS WAF │ ──(Matches Block List?)──► [ ✗ Blocked IPs ] ──► (403 Forbidden / Logs)
+└─────────┘
+│
+(Allowed)
+│
+▼
+┌─────────┐
+│   IGW   │ (Internet Gateway)
+└─────────┘
+│
+▼
+┌─────────┐
+│  VPC-1  │
+│  ┌──────┴────────────────────────┐
+│  │ Public Subnets (1a & 1b)      │
+│  │   ┌───────────────────────┐   │
+│  │   │          ALB          │   │ (Application Load Balancer)
+│  │   └──────────┬────────────┘   │
+│  │              │                │
+│  │              ▼                │
+│  │   ┌───────────────────────┐   │
+│  │   │      EC2 Instance     │   │ (Windows IIS Web Server)
+│  │   │     (Web-Target-1)    │   │
+│  │   └───────────────────────┘   │
+│  └───────────────────────────────┘
+└──────────────────────────────────┘
 
 
 
@@ -550,6 +606,11 @@ Action { All Allow and Block IPs are shown }
 
 
 
+---
 
+## 📝 Key Takeaways
+1. **Defense in Depth:** Secured web applications at the perimeter using AWS WAF prior to traffic ever hitting backend servers.
+2. **High Availability:** Leveraged Load Balancers and target groups to prepare environments for seamless horizontal scaling.
+3. **Infrastructure Control:** Hand-configured networking tables, subnets, and security groups to adhere to the principle of least privilege.
 
 
