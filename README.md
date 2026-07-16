@@ -2,15 +2,21 @@
 
 
 
-![alt text](../lightsail-lab/lightsail.step0.png)
-
-![alt text](../lightsail-lab/lightsail.step1.png)
+![alt text](<aws class 41 lab/lightsail-lab/lightsail.step0.png>)
 
 
-![alt text](../lightsail-lab/lightsail.step2.png)
+
+![alt text](<aws class 41 lab/lightsail-lab/lightsail.step1.png>)
 
 
-![alt text](../lightsail-lab/lightsail.step3-4.png)
+
+![alt text](<aws class 41 lab/aws-WAF/waf-2.png>)
+
+
+
+![alt text](<aws class 41 lab/lightsail-lab/lightsail.step3-4.png>)
+
+
 
 
 
@@ -132,40 +138,62 @@ seen yes -------> Hello world!
 
 
 
-![alt text](aws-WAF/waf0.png)
+![alt text](<aws class 41 lab/aws-WAF/waf0.png>)
 
 
-![alt text](aws-WAF/waf1.png)
 
 
-![alt text](aws-WAF/waf-2.png)
+![alt text](<aws class 41 lab/aws-WAF/waf1.png>)
 
 
-![alt text](aws-WAF/waf-3.png)
 
 
-![alt text](aws-WAF/waf-4.png)
+![alt text](<aws class 41 lab/aws-WAF/waf-2.png>)
 
 
-![alt text](aws-WAF/waf-5.png)
 
 
-![alt text](aws-WAF/waf-6.png)
+![alt text](<aws class 41 lab/aws-WAF/waf-3.png>)
 
 
-![alt text](aws-WAF/waf-7.png)
 
 
-![alt text](aws-WAF/waf-8.png)
+![alt text](<aws class 41 lab/aws-WAF/waf-4.png>)
 
 
-![alt text](aws-WAF/waf-9.png)
 
 
-![alt text](aws-WAF/waf-10.png)
+![alt text](<aws class 41 lab/aws-WAF/waf-5.png>)
 
 
-![alt text](aws-WAF/waf-11-12.png)
+
+
+![alt text](<aws class 41 lab/aws-WAF/waf-6.png>)
+
+
+
+
+![alt text](<aws class 41 lab/aws-WAF/waf-7.png>)
+
+
+
+
+![alt text](<aws class 41 lab/aws-WAF/waf-8.png>)
+
+
+
+
+![alt text](<aws class 41 lab/aws-WAF/waf-9.png>)
+
+
+
+
+![alt text](<aws class 41 lab/aws-WAF/waf-10.png>)
+
+
+
+
+![alt text](<aws class 41 lab/aws-WAF/waf-11-12.png>)
 
 
 
