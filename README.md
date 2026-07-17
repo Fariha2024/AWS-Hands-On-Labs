@@ -144,6 +144,394 @@ seen yes -------> Hello world!
 
 -----------x-----------
 
+### AWS Lightsail Lab – Part 1 (Beginner Friendly)
+
+#### Step 1: Open Lightsail
+
+1. Login to AWS Console.
+2. Search **Lightsail** in the search bar.
+3. Click **Lightsail**.
+
+---
+
+#### Step 2: Create Instance
+
+1. Click **Create instance**.
+
+---
+
+#### Step 3: Choose Platform
+
+Under **Select a platform**:
+
+✅ **Linux/Unix**
+
+---
+
+#### Step 4: Choose Blueprint
+
+Under **Select a blueprint**:
+
+✅ **WordPress**
+
+You should see:
+
+✅ **Originally packaged by Bitnami**
+
+Leave it as default.
+
+---
+
+#### Step 5: Create SSH Key
+
+1. Scroll to **SSH key pair manager**.
+2. Click **Change SSH key pair** (or Create new key pair).
+3. Click **Create new**.
+4. Enter:
+
+```text
+My-Lightsail-key-123
+```
+
+5. Click **Create key pair**.
+6. A `.pem` file will download automatically.
+
+⚠️ Save this file safely. You may need it later for SSH access.
+
+---
+
+#### Step 6: Select Instance Plan
+
+Under **Choose your instance plan**:
+
+**Plan type**
+✅ General purpose
+
+**Network type**
+✅ Dual-stack
+
+**Size**
+✅ $5 USD/month
+
+---
+
+#### Step 7: Name the Instance
+
+Under **Identify your instance**:
+
+Instance name:
+
+```text
+WordPress-1
+```
+
+---
+
+#### Step 8: Create Instance
+
+Click:
+
+✅ **Create instance**
+
+Wait 2–5 minutes.
+
+Status will change from:
+
+```text
+Pending
+```
+
+to
+
+```text
+Running
+```
+
+---
+
+### After Instance is Running
+
+Send me a screenshot or tell me when **WordPress-1** shows **Running**, and I'll guide you through:
+
+* Getting the public IP
+* Opening the WordPress website
+* Getting the WordPress admin password
+* Logging into WordPress admin panel
+* Final cleanup to avoid charges after the lab.
+
+
+
+### Step 2: Retrieve WordPress Default Password
+
+After **WordPress-1** is running:
+
+1. Go to **Lightsail** → **Instances**.
+2. Click **WordPress-1**.
+3. Open the **Connect** tab (or look for **Retrieve default password**).
+4. Click **Retrieve default password**.
+
+You will see **WordPress credentials**.
+
+### Step 1
+
+Click:
+
+**Launch CloudShell**
+
+A terminal window will open.
+
+### Step 2
+
+On the password page, AWS will show a command similar to:
+
+```bash
+cat $HOME/bitnami_application_password
+```
+
+or another Bitnami/Lightsail command.
+
+**Copy the exact command AWS displays** and **paste it into CloudShell**, then press **Enter**.
+
+The terminal will output a password like:
+
+```text
+AbCd1234EfGh
+```
+
+Copy that password.
+
+### WordPress Login Credentials
+
+* Username: **user**
+* Password: **(the password returned by CloudShell)**
+
+If you can see the command AWS is showing, paste it here and I'll verify it before you run it.
+
+
+
+### Step 3: Go to WordPress Web Portal
+
+You have already completed this step. ✅
+
+Follow these steps:
+
+### 1. Open Browser
+
+Search your **Public IP + /wp-admin**
+
+Your URL:
+
+```text
+http://3.110.133.168/wp-admin
+```
+
+---
+
+### 2. WordPress Login Page
+
+Enter:
+
+**Username**
+
+```text
+user
+```
+
+**Password**
+
+```text
+2bS543NFECFwYfZG
+```
+
+Click:
+
+✅ **Log In**
+
+---
+
+### 3. Verify Success
+
+You should see:
+
+🎉 **Welcome to WordPress!**
+
+and the **WordPress Dashboard**.
+
+Your lab progress:
+
+✅ Lightsail Instance Created
+✅ WordPress Blueprint Installed
+✅ SSH Key Created
+✅ Default Password Retrieved
+✅ WP Admin Login Completed
+
+Next step in the lab will likely be WordPress configuration or Lightsail management. Send the next part.
+
+
+
+### Step 4: Check WordPress Web Portal
+
+Now you will verify that your WordPress website is working.
+
+### 1. Open Browser
+
+Search your **Public IP address only** (without `/wp-admin`):
+
+```text
+http://3.110.133.168
+```
+
+---
+
+### 2. WordPress Website Opens
+
+You should see the default WordPress site:
+
+✅ **Blog**
+✅ **Hello world!**
+
+This confirms:
+
+* WordPress is installed successfully ✅
+* Lightsail instance is running ✅
+* Web server is working ✅
+* Website is publicly accessible ✅
+
+Your Lightsail Lab progress:
+
+✅ Step 1: Create Lightsail WordPress Instance
+✅ Step 2: Retrieve Default Password
+✅ Step 3: Login to WP Admin
+✅ Step 4: Verify Public Website
+
+Next step is usually WordPress customization, HTTPS setup, or cleanup. Send the next lab step.
+
+
+
+
+## AWS Lightsail Lab – Post Cleanup Checklist
+
+After finishing the lab, delete resources to avoid charges.
+
+### 1. Delete Lightsail Instance
+
+Go to:
+
+**Lightsail → Instances**
+
+Select:
+
+```text
+WordPress-1
+```
+
+Click:
+
+```text
+Delete
+```
+
+Confirm deletion.
+
+✅ Instance deleted
+
+---
+
+### 2. Delete Static IP (if created)
+
+Go to:
+
+**Lightsail → Networking**
+
+Check if any:
+
+* Static IP
+* IPv4 address attachment
+
+exists.
+
+If yes:
+
+```text
+Delete Static IP
+```
+
+✅ Static IP removed
+
+---
+
+### 3. Delete Snapshots (if created)
+
+Go to:
+
+**Lightsail → Snapshots**
+
+Delete:
+
+* Manual snapshots
+* Automatic snapshots
+
+✅ Snapshots removed
+
+---
+
+### 4. Delete Custom SSH Key (Optional)
+
+Go to:
+
+**AWS Account → SSH keys / Lightsail SSH keys**
+
+Remove:
+
+```text
+my-lightsail-key-123
+```
+
+(if you don't need it for future labs)
+
+✅ Key removed
+
+---
+
+### 5. Check Other AWS Regions
+
+Lightsail is region-specific.
+
+Check:
+
+* Mumbai (ap-south-1)
+* Any other region you used
+
+Make sure no instances remain.
+
+---
+
+### Final Verification
+
+Your Lightsail should show:
+
+```
+Instances: 0
+Static IPs: 0
+Snapshots: 0
+```
+
+Then you can safely logout. ✅
+
+**Lab completed:**
+
+* Created Lightsail WordPress VPS
+* Generated SSH key
+* Retrieved WordPress credentials
+* Accessed WP Admin
+* Verified website
+* Cleaned resources
+
+
+
+------------xxx------------
+
+
 ### 🛡️ Lab 2: Secure Web Infrastructure (VPC + ALB + EC2 + WAF)
 A production-grade, multi-tier web application architecture featuring high-availability routing and centralized security controls.
 * **VPC Networking:** Provisioned a custom VPC (`10.0.0.0/16`) spanning multiple Availability Zones with custom subnets, an Internet Gateway (IGW), and routing tables (`custom-RT`).
