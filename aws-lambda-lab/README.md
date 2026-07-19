@@ -1,26 +1,52 @@
+
+---
+
+## 🎯 Objectives of the Lab
+
+This hands-on lab is designed to achieve the following core operational and technical objectives:
+
+* **Implement Infrastructure Automation:** Eliminate manual operational tasks by replacing console-based workflows with programmatic, automated scripts.
+* **Master Serverless Orchestration:** Understand how to decouple services and trigger serverless code blocks efficiently using event-driven architectures.
+* **Optimize Cloud Costs (FinOps):** Simulate dynamic resource scaling strategies (vertical scaling) to match real-world business demands—minimizing active running costs during off-peak windows.
+* **Enforce Secure Access Frameworks:** Implement cloud security best practices using the **Principle of Least Privilege** through customized AWS Identity and Access Management (IAM) execution roles.
+* **Build Resilience through Debugging:** Gain practical exposure to analyzing runtime exceptions, configuring optimal execution timeout limits, and overriding environment-specific restrictions.
+
+---
+
+
+
+
 ![alt text](lambda-0.png)
+
 
 ![alt text](lambda-01.png)
 
+
 ![alt text](lambda-02.png)
+
 
 ![alt text](lambda-2.png)
 
+
 ![alt text](lambda-3.png)
+
 
 ![alt text](lambda-03.png)
 
+
 ![alt text](lambda-4.png)
+
 
 ![alt text](lambda-04.png)
 
+
 ![alt text](lambda-5.png)
+
 
 ![alt text](lambda-6.png)
 
+
 ![alt text](lambda-7.png)
-
-
 
 
 
